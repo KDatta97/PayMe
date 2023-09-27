@@ -25,7 +25,7 @@ struct LoginView: View {
                 VStack(spacing: 24){
                     InputView(text: $email,
                               title: "Email Address",
-                              placeholder: "name@eExample.com")
+                              placeholder: "name@example.com")
                     .autocapitalization(.none)
                     
                     InputView(text: $password,

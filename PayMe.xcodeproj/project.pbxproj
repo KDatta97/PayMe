@@ -18,6 +18,10 @@
 		1B7D50592AC418640052E579 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7D50582AC418640052E579 /* FirebaseFirestore */; };
 		1B7D505B2AC418640052E579 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7D505A2AC418640052E579 /* FirebaseFirestoreSwift */; };
 		1B7D505F2AC41A640052E579 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D505E2AC41A640052E579 /* AuthViewModel.swift */; };
+		1BCECB212AC4D0E000476F47 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCECB202AC4D0E000476F47 /* CategoryView.swift */; };
+		1BCECB232AC4D0FF00476F47 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCECB222AC4D0FF00476F47 /* AddView.swift */; };
+		1BCECB252AC4D11000476F47 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCECB242AC4D11000476F47 /* HomeView.swift */; };
+		1BCECB282AC4E3BC00476F47 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCECB272AC4E3BC00476F47 /* ReportView.swift */; };
 		1BE275302AC3F9DC003174C3 /* PayMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE2752F2AC3F9DC003174C3 /* PayMeApp.swift */; };
 		1BE275322AC3F9DC003174C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE275312AC3F9DC003174C3 /* ContentView.swift */; };
 		1BE275342AC3F9DD003174C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BE275332AC3F9DD003174C3 /* Assets.xcassets */; };
@@ -33,6 +37,10 @@
 		1B7D50512AC413B80052E579 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1B7D50532AC417B70052E579 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1B7D505E2AC41A640052E579 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		1BCECB202AC4D0E000476F47 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		1BCECB222AC4D0FF00476F47 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		1BCECB242AC4D11000476F47 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1BCECB272AC4E3BC00476F47 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		1BE2752C2AC3F9DC003174C3 /* PayMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE2752F2AC3F9DC003174C3 /* PayMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayMeApp.swift; sourceTree = "<group>"; };
 		1BE275312AC3F9DC003174C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +83,10 @@
 		1B7D50402AC404050052E579 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1BCECB262AC4E3A600476F47 /* Reports */,
+				1BCECB1F2AC4D0BB00476F47 /* Add */,
+				1BCECB1E2AC4D08400476F47 /* Category */,
+				1BCECB1D2AC4D05A00476F47 /* Home */,
 				1B7D50432AC4043B0052E579 /* Authentication */,
 				1B7D50442AC404440052E579 /* Profile */,
 				1B7D50422AC4042E0052E579 /* Root */,
@@ -129,6 +141,38 @@
 				1B7D505E2AC41A640052E579 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1BCECB1D2AC4D05A00476F47 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1BCECB242AC4D11000476F47 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1BCECB1E2AC4D08400476F47 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1BCECB202AC4D0E000476F47 /* CategoryView.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1BCECB1F2AC4D0BB00476F47 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				1BCECB222AC4D0FF00476F47 /* AddView.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		1BCECB262AC4E3A600476F47 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				1BCECB272AC4E3BC00476F47 /* ReportView.swift */,
+			);
+			path = Reports;
 			sourceTree = "<group>";
 		};
 		1BE275232AC3F9DC003174C3 = {
@@ -254,9 +298,13 @@
 				1B7D504A2AC409550052E579 /* InputView.swift in Sources */,
 				1BE275322AC3F9DC003174C3 /* ContentView.swift in Sources */,
 				1BE275302AC3F9DC003174C3 /* PayMeApp.swift in Sources */,
+				1BCECB212AC4D0E000476F47 /* CategoryView.swift in Sources */,
 				1B7D50522AC413B80052E579 /* User.swift in Sources */,
+				1BCECB232AC4D0FF00476F47 /* AddView.swift in Sources */,
+				1BCECB282AC4E3BC00476F47 /* ReportView.swift in Sources */,
 				1B7D504E2AC412160052E579 /* ProfileView.swift in Sources */,
 				1B7D504C2AC410B40052E579 /* RegistrationView.swift in Sources */,
+				1BCECB252AC4D11000476F47 /* HomeView.swift in Sources */,
 				1B7D50502AC412E50052E579 /* SettingsRowView.swift in Sources */,
 				1B7D505F2AC41A640052E579 /* AuthViewModel.swift in Sources */,
 			);

@@ -9,13 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+
     var body: some View {
-        Group{
-            if viewModel.userSession != nil{
+        if viewModel.userSession != nil {
+            TabView() {
+                HomeView()
+                    .tabItem {
+                        Label("Home", systemImage: "house.fill")
+                    }
+
+                
+                AddView()
+                    .tabItem {
+                        Label("Add", systemImage: "plus.circle.fill")
+                    }
+                
                 ProfileView()
-            } else {
-                LoginView()
+                    .tabItem {
+                        Label("Settings", systemImage: "gearshape.fill")
+                    }
+
             }
+            .accentColor(.blue) // Set the tab bar color
+            
+            //CustomTabBar(selectedTabs: $selectedTab)
+        } else {
+            LoginView()
         }
     }
 }

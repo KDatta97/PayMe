@@ -12,48 +12,54 @@ struct ProfileView: View {
     
     var body: some View {
         if let user = viewModel.currentUser {
-            List {
-                Section{
-                    HStack{
-                        Text(user.initials)
-                            .font(.title)
-                            .foregroundColor(Color(.white))
-                            .frame(width: 72, height: 72)
-                            .background(Color(.systemGray))
-                            .clipShape(Circle())
-                        
-                        VStack (alignment: .leading, spacing: 4){
-                            Text(user.fullName)
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .padding(.top,4)
+            NavigationView {
+                List {
+                    Section{
+                        HStack{
+                            Text(user.initials)
+                                .font(.title)
+                                .foregroundColor(Color(.white))
+                                .frame(width: 72, height: 72)
+                                .background(Color(.systemGray))
+                                .clipShape(Circle())
                             
-                            Text(user.email)
-                                .font(.footnote)
-                                .foregroundColor(.gray)
+                            VStack (alignment: .leading, spacing: 4){
+                                Text(user.fullName)
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .padding(.top,4)
+                                
+                                Text(user.email)
+                                    .font(.footnote)
+                                    .foregroundColor(.gray)
+                            }
                         }
                     }
-                }
-                
-                Section ("General") {
-                    HStack{
-                        SettingsRowVIew(imageName: "gear",
-                                        title: "Version",
-                                        tintColor: Color(.systemGray))
-                        Spacer()
-                        
-                        Text("1.0.0")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                                    
+                    Section("Categories") {
+                        NavigationLink(destination: CategoryView()) {
+                            SettingsRowVIew(imageName: "square.grid.2x2.fill",
+                                            title: "Add Categories",
+                                            tintColor: Color(.systemGray))
+                        }
                     }
-                }
-                Section("Account") {
-                    Button {
-                        viewModel.signOut()
-                    } label: {
-                        SettingsRowVIew(imageName: "arrow.left.circle.fill",
-                                        title: "Sign Out",
-                                        tintColor: .red)
+                    
+                    
+                    Section("Reports") {
+                        NavigationLink(destination: ReportView()) {
+                            SettingsRowVIew(imageName: "chart.pie.fill",
+                                            title: "Reports",
+                                            tintColor: Color(.systemGray))
+                        }
+                    }
+                    Section("Account") {
+                        Button {
+                            viewModel.signOut()
+                        } label: {
+                            SettingsRowVIew(imageName: "arrow.left.circle.fill",
+                                            title: "Sign Out",
+                                            tintColor: .red)
+                        }
                     }
                 }
             }
