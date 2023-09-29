@@ -105,6 +105,7 @@
 		1B7D50422AC4042E0052E579 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				1BE275312AC3F9DC003174C3 /* ContentView.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -198,7 +199,6 @@
 				1B7D50402AC404050052E579 /* Core */,
 				1B7D503F2AC403FA0052E579 /* Components */,
 				1B7D503E2AC403EF0052E579 /* App */,
-				1BE275312AC3F9DC003174C3 /* ContentView.swift */,
 				1BE275332AC3F9DD003174C3 /* Assets.xcassets */,
 				1B7D50532AC417B70052E579 /* GoogleService-Info.plist */,
 				1BE275352AC3F9DD003174C3 /* PayMe.entitlements */,
