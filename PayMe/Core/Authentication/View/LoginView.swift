@@ -5,27 +5,29 @@
 //  Created by user244521 on 9/27/23.
 //
 
+
 import SwiftUI
 
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
-    @StateObject var viewModel = AuthViewModel()
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             VStack{
-                //logo
+                //img
                 Image("PayMe-logo")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 200, height: 200)
-                    .padding(.vertical,32)
+                   .resizable()
+                   .scaledToFill()
+                   .frame(width: 200, height: 200)
+                   .padding(.vertical, 32)
                 
-                //form
+                
+                //formfeilds
                 VStack(spacing: 24){
                     InputView(text: $email,
                               title: "Email Address",
-                              placeholder: "name@example.com")
+                              placeholder: "name@eExample.com")
                     .autocapitalization(.none)
                     
                     InputView(text: $password,
@@ -45,9 +47,8 @@ struct LoginView: View {
                         .fontWeight(.semibold)
                 }
                 .padding(.top, 10)
-                
-                //signin button
 
+                //sign in button
                 Button {
                     Task {
                        try await viewModel.signIn(withEmail: email, password: password)
@@ -68,7 +69,6 @@ struct LoginView: View {
                 .padding(.top, 10)
                 
                 Spacer()
-                
                 //sign up button
                 NavigationLink {
                     RegistrationView()
@@ -88,7 +88,7 @@ struct LoginView: View {
     }
 }
 
-//Login Form Validations
+//Authentication Form Protocol
 extension LoginView: AuthenticationFormProtocol {
     var formIsVaild: Bool {
         return !email.isEmpty
